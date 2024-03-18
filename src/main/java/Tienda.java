@@ -36,7 +36,7 @@ public class Tienda {
         }
     }
 
-    public void eliminarProducto(String nombre, String categoria) {
+    public boolean eliminarProducto(String nombre, String categoria) {
         //busca el producto por nombre y categoria
         for (Producto producto : this.productos) {
             if (producto.getNombre().equalsIgnoreCase(nombre) && producto.getCategoria().equalsIgnoreCase(categoria)){
@@ -45,8 +45,10 @@ public class Tienda {
                 //elimina el producto
                 this.productos.remove(producto);
                 System.out.println("==================================================================================================");
+                return true;
             }
         }
+        return false;
     }
 
     public void modificarProducto(String nombre, int precio, int stock, String descripcion){
@@ -67,7 +69,7 @@ public class Tienda {
     public void realizarCompra(String nombre){
         for (Producto producto : this.productos){
             if (producto.getNombre().equalsIgnoreCase(nombre)){
-                System.out.println("Usted ha comprado de manera exitosa un: "+producto.getNombre());
+                System.out.println("Usted ha comprado exitosamente un: "+producto.getNombre());
                 producto.setStock(producto.getStock()-1);
                 System.out.println("El nuevo stock es: "+producto.getStock());
                 System.out.println("==================================================================================================");
