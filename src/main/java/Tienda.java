@@ -18,7 +18,7 @@ public class Tienda {
         for (Producto producto : this.productos) {
             System.out.println(producto);
         }
-        System.out.println("==================================================================================================================x ");
+        System.out.println("================================================================================================================== ");
     }
 
     public void agregarProducto(String nombre, int precio, int stock, String descripcion, String categoria) {
@@ -66,12 +66,15 @@ public class Tienda {
         }
     }
 
-    public void realizarCompra(String nombre){
+    public void realizarCompra(String nombre, int stock){
         for (Producto producto : this.productos){
-            if (producto.getNombre().equalsIgnoreCase(nombre)){
+            if (producto.getNombre().equalsIgnoreCase(nombre) && producto.getStock()>=stock){
                 System.out.println("Usted ha comprado exitosamente un: "+producto.getNombre());
-                producto.setStock(producto.getStock()-1);
+                producto.setStock(producto.getStock()-stock);
                 System.out.println("El nuevo stock es: "+producto.getStock());
+                System.out.println("==================================================================================================");
+            } else if (producto.getNombre().equalsIgnoreCase(nombre) && producto.getStock()<stock) {
+                System.out.println("Producto fuera de stock");
                 System.out.println("==================================================================================================");
             }
         }

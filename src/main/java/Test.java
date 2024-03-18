@@ -10,8 +10,9 @@ public class Test {
 
         tienda.buscarProducto("NotebOOk", "CompUtaD");
 
-        tienda.realizarCompra("mOusE");
-        tienda.realizarCompra("MOUSE");
+        tienda.realizarCompra("mOusE", 2);
+        tienda.realizarCompra("MOUSE", 10);
+        tienda.realizarCompra("MOUSE", 60);
 
         tienda.modificarProducto("Notebook", 10000, 100, "Notebook 24 pulgadas especializado en trabajo");
 
