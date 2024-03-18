@@ -31,6 +31,7 @@ public class Tienda {
         for (Producto producto : this.productos) {
             if (producto.getNombre().equalsIgnoreCase(nombre) || producto.getCategoria().equalsIgnoreCase(categoria)) {
                 System.out.println("Producto encontrado: " + producto);
+                System.out.println("==================================================================================================");
             }
         }
     }
@@ -43,6 +44,7 @@ public class Tienda {
                 System.out.println("Producto eliminado: " + producto);
                 //elimina el producto
                 this.productos.remove(producto);
+                System.out.println("==================================================================================================");
             }
         }
     }
@@ -50,13 +52,27 @@ public class Tienda {
     public void modificarProducto(String nombre, int precio, int stock, String descripcion){
         for (Producto producto : this.productos){
             if (producto.getNombre().equalsIgnoreCase(nombre)){
+                System.out.println("Producto a modificar: "+producto);
                 //modificar precio, stock y descripcion
-
+                producto.setPrecio(precio);
+                producto.setStock(stock);
+                producto.setDescripcion(descripcion);
+                System.out.println("El producto se ha modificado de manera exitosa: "+producto);
+                System.out.println("==================================================================================================");
 
             }
         }
+    }
 
-
+    public void realizarCompra(String nombre){
+        for (Producto producto : this.productos){
+            if (producto.getNombre().equalsIgnoreCase(nombre)){
+                System.out.println("Usted ha comprado de manera exitosa un: "+producto.getNombre());
+                producto.setStock(producto.getStock()-1);
+                System.out.println("El nuevo stock es: "+producto.getStock());
+                System.out.println("==================================================================================================");
+            }
+        }
     }
 
 }
