@@ -41,7 +41,7 @@ public class Tienda {
         for (Producto producto : this.productos) {
             if (producto.getNombre().equalsIgnoreCase(nombre) && producto.getCategoria().equalsIgnoreCase(categoria)){
                 //notifica que será eliminado
-                System.out.println("Producto eliminado: " + producto);
+                System.out.println("Producto eliminado: " + producto.getNombre()+", categoria: "+ producto.getCategoria());
                 //elimina el producto
                 this.productos.remove(producto);
                 System.out.println("==================================================================================================");

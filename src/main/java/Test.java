@@ -14,5 +14,7 @@ public class Test {
 
         tienda.modificarProducto("Notebook", 10000, 100, "Notebook 24 pulgadas especializado en trabajo");
 
+        tienda.eliminarProducto("Audifonos", "Auriculares");
+        tienda.mostrarProductos();
     }
 }
